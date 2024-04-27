@@ -1,11 +1,12 @@
 #include <iostream>
 #include <cmath>
 #include <clocale>
+using namespace std;
 
-setlocale(LC_CTYPE, "rus");
 int Pryam(int a, int b){
 string wfind;
-cin >> "Что вы хотите найти? p - периметр, s - площадь, d - диагональ " >> wfind;
+cout << "Что нужно найти: ";
+cin >> wfind;
 if (wfind=="p"){
 cout << a+b << endl;
 }
@@ -15,15 +16,21 @@ cout << a*b << endl;
 if (wfind=="d"){
 cout << (sqrt(a*a+b*b)) << endl;
 }
-if (wfind!="p"||wfind!="s"||wfind!="d"){
+else {
 cout << "Невозможно вычислить" << endl;
 }
+return 0;
 }
 int main(){
+    setlocale(LC_ALL, "Russian");
 string figura;
-cin >> "Vyberite figuru: " >> figura;
-if (figura=="Прямоугольник"){
-int a, b;
-cin >> "Введите стороны прямоугольника:  " >> a >> b;
-Pryam(a, b);
+cout << "Выберите фигуру (p-прямоугольник): ";
+cin >> figura;
+if (figura=="p"){
+    int a, b;
+    cout <<"Введите стороны прямоугольника: ";
+    cin >> a >> b;
+    Pryam(a, b);
+return 0;
+}
 }
