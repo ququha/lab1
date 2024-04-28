@@ -2,57 +2,34 @@
 #include <cmath>
 #include <clocale>
 using namespace std;
-string wfind;
 
 int pryam(int a, int b){
-        cout << "—â® ­ã¦­® ­ ©â¨: ";
-        cin >> wfind;
-        if (wfind=="p"){
-        cout << a+b << endl;
-        }
-        if (wfind=="s"){
-        cout << a*b << endl;
-        }
-        if (wfind=="d"){
-        cout << (sqrt(a*a+b*b)) << endl;
-        }
-        else {
-        cout << "¥¢®§¬®¦­® ¢ëç¨á«¨âì" << endl;
-        }
+        cout << "Ïåðèìåòð: " << a+b << endl;
+        cout <<"Ïëîùàäü: " << a*b << endl;
+        cout << "Äèàãîíàëü: " << (sqrt(a*a+b*b)) << endl;
 }
 
 
 int trap(int a, int b, int h){
-    cout << "—â® ­ã¦­® ­ ©â¨ («®é ¤ì s, ¯¥à¨¬¥âà p, ¤«¨­  áà¥¤­¥© «¨­¨¨ z): ";
-    cin >> wfind;
-    if (wfind=="s"){
-        cout << (a+b)*h/2 << endl;
-    }
-    if (wfind=="p"){
-        cout << "‚¢¥¤¨â¥ ¡®ª®¢ë¥ áâ®à®­ë: ";
+        cout <<" Ïëîùàäü: " << (a+b)*h/2 << endl;
+        cout << "Ââåäèòå áîêîâûå ñòîðîíû: ";
         int c, d;
         cin >> c >> d;
-        cout << a+b+c+d << endl;
-    }
-    if (wfind=="z"){
-        cout << (a+b)/2 << endl;
-    }
-    else {
-        cout << "¥¢®§¬®¦­® ¢ëç¨á«¨âì";
-    }
+        cout << "Ïåðèìåòð: " << a+b+c+d << endl;
+        cout <<"Ñðåäíÿÿ ëèíèÿ: " << (a+b)/2 << endl;
 }
 int main(){
     setlocale(LC_ALL, "Russian");
     int a, b, h;
     string figura, x;
-    cout << "‚ë¡¥à¨â¥ ä¨£ãàã (p-¯àï¬®ã£®«ì­¨ª, t-âà ¯¥æ¨ï) : ";
+    cout << "Âûáåðèòå ôèãóðó (p-ïðÿìîóãîëüíèê, t-òðàïåöèÿ) : ";
     cin >> figura;
     if (figura=="p"){
     for (int i=0, n=1; i<n; i++, n++){
-        cout <<"‚¢¥¤¨â¥ áâ®à®­ë ¯àï¬®ã£®«ì­¨ª : ";
+        cout <<"Ââåäèòå ñòîðîíû ïðÿìîóãîëüíèêà: ";
         cin >> a >> b;
         pryam(a, b);
-        cout << "•®â¨â¥ ¯à®¤®«¦¨âì? (y/n) ";
+        cout << "Õîòèòå ïðîäîëæèòü? (y/n) ";
         cin >> x;
         if (x=="y"){
             continue;
@@ -64,10 +41,10 @@ int main(){
     }
     if (figura=="t"){
         for (int i=0, n=1; i<n; i++, n++){
-        cout << "‚¢¥¤¨â¥ ®á­®¢ ­¨ï ¨ ¢ëá®âã âà ¯¥æ¨¨: ";
+        cout << "Ââåäèòå îñíîâàíèÿ è âûñîòó òðàïåöèè: ";
         cin >> a >> b >> h;
         trap(a, b, h);
-        cout << "•®â¨â¥ ¯à®¤®«¦¨âì? (y/n) ";
+        cout << "Õîòèòå ïðîäîëæèòü? (y/n) ";
         cin >> x;
         if (x=="y"){
             continue;
