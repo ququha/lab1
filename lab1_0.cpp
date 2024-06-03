@@ -15,6 +15,10 @@ int trap(int a, int b, int h){
         cout << "Введите боковые стороны: ";
         int c, d;
         cin >> c >> d;
+        if (c < h || d < h) {
+            cout << "Ошибка" << endl;
+            return 0;
+        }
         cout << "Периметр: " << a+b+c+d << endl;
         cout <<"Средняя линия: " << (a+b)/2 << endl;
 }
@@ -28,6 +32,10 @@ int main(){
     for (int i=0, n=1; i<n; i++, n++){
         cout <<"Введите стороны прямоугольника: ";
         cin >> a >> b;
+        if (a < 0 || b < 0) {
+            cout << "Ошибка";
+            break;
+        }
         pryam(a, b);
         cout << "Хотите продолжить? (y/n) ";
         cin >> x;
@@ -43,6 +51,10 @@ int main(){
         for (int i=0, n=1; i<n; i++, n++){
         cout << "Введите основания и высоту трапеции: ";
         cin >> a >> b >> h;
+        if (a < 0 || b < 0 || h < 0) {
+            cout << "Ошибка";
+            break;
+        }
         trap(a, b, h);
         cout << "Хотите продолжить? (y/n) ";
         cin >> x;
